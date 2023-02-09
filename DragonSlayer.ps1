@@ -6,8 +6,9 @@
 #                                                                                                            #
 ##############################################################################################################
 
-# Dragon Slayer 1.01 2023.02.09.
+# Dragon Slayer v1.01 2023.02.09.
 # Modified by Kapitany
+# https://github.com/Kapitany777/DragonSlayer
 
 #Game Variables
 $global:playerCharacter = $null
@@ -124,7 +125,7 @@ function Character-Selection()
 
     Write-Host ""
 
-    Switch ($userResponse) 
+    switch ($userResponse) 
     { 
             A {$global:playerCharacter = "Slorvak"}
             B {$global:playerCharacter = "Prince Valant"} 
@@ -135,13 +136,13 @@ function Character-Selection()
 
     Write-Host "                                     You selected $global:playerCharacter, lets begin"
 
-    Sleep 3
+    Start-Sleep 3
 }
 
 function Accept-TheQuest()
 {
     #Clear Console
-    clear-host
+    Clear-Host
 
     #Dragon Slayer
     Write-Host "##############################################################################################################"
@@ -161,10 +162,10 @@ function Accept-TheQuest()
     
     Write-Host ""
 
-    Switch ($userResponse) 
+    switch ($userResponse) 
     { 
-        "Yes" {Write-Host "The King thanks you $global:playerCharacter, now start your quest!"; Sleep 4; return $true}
-        "No"  {Write-Host "Your King is dissapointed and sends you on your way"; Sleep 4; return $false} 
+        "Yes" {Write-Host "The King thanks you $global:playerCharacter, now start your quest!"; Start-Sleep 4; return $true}
+        "No"  {Write-Host "Your King is dissapointed and sends you on your way"; Start-Sleep 4; return $false} 
     }
 }
 
@@ -189,11 +190,10 @@ function Arrive-AtVillage()
         $userResponse = Read-Host -Prompt "Answer (A or B)"
     }
     while($userResponse -notlike "A" -and $userResponse -notlike "B")
-       
     
     Write-Host ""
 
-    Switch ($userResponse) 
+    switch ($userResponse) 
     { 
         "A" {Speak-ToVillagers}
         "B" {Speak-ToDetachment} 
@@ -234,7 +234,6 @@ function Speak-ToDetachment()
 
         Attack-DragonWithDetachment
     }
-
 }
 
 function Wait-ForDragon()
@@ -252,8 +251,7 @@ function Wait-ForDragon()
     Write-Host ""
     Write-Host "Press any key to continue"    
 
-    $continue = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-     
+    $continue = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")     
 }
 
 function Attack-DragonWithDetachment()
@@ -296,7 +294,6 @@ function Attack-DragonOnOwn()
     Write-Host "Press any key to continue"    
 
     $continue = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-
 }
 
 function Speak-ToVillagers()
@@ -323,11 +320,10 @@ function Speak-ToVillagers()
         $userResponse = Read-Host -Prompt "Answer (A or B)"
     }
     while($userResponse -notlike "A" -and $userResponse -notlike "B")
-       
     
     Write-Host ""
 
-    Switch ($userResponse) 
+    switch ($userResponse) 
     { 
         "A" {Speak-ToDetachment}
         "B" {Attack-DragonOnOwn} 
@@ -358,8 +354,6 @@ while($true)
         #Player Quit
         Write-Host ""
         Write-Host "Thanks for Playing"
-        Sleep 3
+        Start-Sleep 3
     }
 }
-
-
