@@ -330,11 +330,10 @@ function Speak-ToVillagers()
     }
 }
 
-Setup-Display
+# Setup-Display
 
 while($true)
 {
-    
     Title-Screen
 
     if(!$global:runGame)
@@ -345,6 +344,7 @@ while($true)
     Character-Selection
 
     $accept = Accept-TheQuest
+
     if($accept -eq $true)
     {
         Arrive-AtVillage
