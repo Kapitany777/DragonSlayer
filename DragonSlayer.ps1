@@ -11,9 +11,9 @@
 # https://github.com/Kapitany777/DragonSlayer
 
 #Game Variables
-$global:playerCharacter = $null
-$global:playerDragonTip = $false
-$global:runGame         = $true
+[string] $global:playerCharacter = $null
+[bool] $global:playerDragonTip   = $false
+[bool] $global:runGame           = $true
 
 #Clear Console
 Clear-Host
