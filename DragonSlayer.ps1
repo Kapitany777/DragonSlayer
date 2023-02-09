@@ -6,6 +6,9 @@
 #                                                                                                            #
 ##############################################################################################################
 
+# Dragon Slayer 1.01 2023.02.09.
+# Modified by Kapitany
+
 #Game Variables
 $global:playerCharacter = $null
 $global:playerDragonTip = $false
